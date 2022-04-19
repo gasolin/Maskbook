@@ -13,7 +13,7 @@ import { DialogContent, Box, InputBase, Paper, Button, Typography, ListItem, Cir
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark'
 import { makeStyles, ShadowRootTooltip } from '@masknet/theme'
 import { useCallback, useState, useEffect } from 'react'
-import { SearchIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import CheckIcon from '@mui/icons-material/Check'
 import { Trans } from 'react-i18next'
 import { useUpdate } from 'react-use'
@@ -463,7 +463,7 @@ export function SelectNftTokenDialog(props: SelectNftTokenDialogProps) {
                     <Box className={classes.tokenBox}>
                         <div className={classes.searchWrapperSingle}>
                             <Paper className={classes.search} elevation={0}>
-                                <SearchIcon className={classes.iconButton} />
+                                <Icon type="search" size={24} className={classes.iconButton} />
                                 <InputBase
                                     value={tokenId}
                                     placeholder="Input Token ID"
@@ -557,7 +557,7 @@ export function SelectNftTokenDialog(props: SelectNftTokenDialogProps) {
                     <Box className={classes.ownerTokenBox}>
                         <div className={classes.searchWrapper}>
                             <Paper className={classes.search} elevation={0}>
-                                <SearchIcon className={classes.iconButton} />
+                                <Icon type="search" size={24} className={classes.iconButton} />
                                 <InputBase
                                     value={tokenDetailedOwnerList.length === 0 ? tokenId : tokenIdListInput}
                                     placeholder="Token ID separated by comma, e.g. 1224, 7873, 8948"
