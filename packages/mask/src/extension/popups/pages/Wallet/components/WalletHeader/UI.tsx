@@ -5,7 +5,7 @@ import { CopyIconButton } from '../../../../components/CopyIconButton'
 import type { Web3Plugin } from '@masknet/plugin-infra/web3'
 import { ChainIcon, FormattedAddress, WalletIcon } from '@masknet/shared'
 import { ChainId, Wallet, formatEthereumAddress, resolveAddressLinkOnExplorer } from '@masknet/web3-shared-evm'
-import { ArrowDropIcon, MaskBlueIcon, PopupLinkIcon } from '@masknet/icons'
+import { ArrowDropIcon, Icon, PopupLinkIcon } from '@masknet/icons'
 
 const useStyles = makeStyles()(() => ({
     container: {
@@ -124,7 +124,7 @@ export const WalletHeaderUI = memo<WalletHeaderUIProps>(
                     onClick={() => {
                         if (!disabled) onActionClick()
                     }}>
-                    <MaskBlueIcon className={classes.avatar} />
+                    <Icon type="maskBlue" className={classes.avatar} />
                     <div>
                         <Typography className={classes.nickname}>{wallet.name}</Typography>
                         <Typography className={classes.identifier}>

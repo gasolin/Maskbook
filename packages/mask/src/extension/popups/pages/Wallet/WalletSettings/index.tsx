@@ -1,6 +1,6 @@
 import { Box, Link, List, ListItem, ListItemText, Typography } from '@mui/material'
 import { makeStyles } from '@masknet/theme'
-import { BackUpIcon, CloudLinkIcon, MaskWalletIcon, TrashIcon } from '@masknet/icons'
+import { BackUpIcon, CloudLinkIcon, Icon, TrashIcon } from '@masknet/icons'
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PopupRoutes } from '@masknet/shared-base'
@@ -87,7 +87,7 @@ const WalletSettings = memo(() => {
     return (
         <>
             <div className={classes.header}>
-                <MaskWalletIcon style={{ marginRight: 4 }} />
+                <Icon type="maskWallet" style={{ marginRight: 4 }} />
                 <div>
                     <Box display="flex" justifyContent="space-between" alignItems="center">
                         <Typography className={classes.name}>{wallet.name}</Typography>

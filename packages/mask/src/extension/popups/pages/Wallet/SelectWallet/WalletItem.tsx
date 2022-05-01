@@ -2,7 +2,7 @@ import type { Wallet } from '@masknet/web3-shared-evm'
 import { formatEthereumAddress } from '@masknet/web3-shared-evm'
 import { makeStyles } from '@masknet/theme'
 import { memo } from 'react'
-import { MaskWalletIcon, SuccessIcon } from '@masknet/icons'
+import { Icon, SuccessIcon } from '@masknet/icons'
 import { ListItem, ListItemText, Typography } from '@mui/material'
 import { FormattedAddress } from '@masknet/shared'
 import { CopyIconButton } from '../../../components/CopyIconButton'
@@ -58,7 +58,7 @@ export const WalletItem = memo<WalletItemProps>(({ wallet, onClick, isSelected }
 
     return (
         <ListItem className={classes.item} onClick={onClick}>
-            <MaskWalletIcon />
+            <Icon type="maskWallet" />
             <ListItemText className={classes.text}>
                 <Typography className={classes.name}>
                     <Typography component="span"> {wallet.name}</Typography>

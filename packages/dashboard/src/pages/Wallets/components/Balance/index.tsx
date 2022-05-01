@@ -1,4 +1,4 @@
-import { CardIcon, DownloadIcon, MaskWalletIcon, SendIcon, SwapIcon } from '@masknet/icons'
+import { CardIcon, DownloadIcon, Icon, SendIcon, SwapIcon } from '@masknet/icons'
 import type { Web3Plugin } from '@masknet/plugin-infra/web3'
 import { MiniNetworkSelector } from '@masknet/shared'
 import { DashboardRoutes } from '@masknet/shared-base'
@@ -95,7 +95,7 @@ export const Balance = memo<BalanceCardProps>(
             <BalanceContainer>
                 <Box display="flex" alignItems="center">
                     <IconContainer sx={{ width: 48, height: 48 }}>
-                        <MaskWalletIcon viewBox="0 0 48 48" fontSize="inherit" />
+                        <Icon type="maskWallet" />
                     </IconContainer>
                     <BalanceDisplayContainer>
                         <BalanceTitle>

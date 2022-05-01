@@ -6,7 +6,7 @@ import { mediaViewerUrl } from '../../../constants'
 import { useUpdateEffect } from 'react-use'
 import { makeStyles, useStylesExtends } from '@masknet/theme'
 import { Box, SvgIconProps } from '@mui/material'
-import { AssetLoadingIcon, MaskPlaceholder } from '@masknet/icons'
+import { AssetLoadingIcon, Icon } from '@masknet/icons'
 
 interface ERC721TokenQuery {
     contractAddress: string
@@ -198,7 +198,7 @@ export const AssetPlayer = memo<AssetPlayerProps>((props) => {
                       (props.fallbackImage ? (
                           <img className={classes.loadingFailImage} src={props.fallbackImage.toString()} />
                       ) : (
-                          <MaskPlaceholder className={classes.errorIcon} {...iconProps} />
+                          <Icon type="maskPlaceholder" className={classes.errorIcon} />
                       ))
                     : props.loadingIcon ?? <AssetLoadingIcon className={classes.loadingIcon} />}
             </Box>

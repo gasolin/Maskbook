@@ -2,7 +2,7 @@ import type { Wallet } from '@masknet/web3-shared-evm'
 import { formatEthereumAddress } from '@masknet/web3-shared-evm'
 import { makeStyles } from '@masknet/theme'
 import { memo, useCallback } from 'react'
-import { EditIcon, MaskWalletIcon, SettingIcon, SuccessIcon } from '@masknet/icons'
+import { EditIcon, Icon, SettingIcon, SuccessIcon } from '@masknet/icons'
 import { NetworkPluginID, useReverseAddress, useWeb3State } from '@masknet/plugin-infra/web3'
 import { ListItem, ListItemText, Typography } from '@mui/material'
 import { FormattedAddress } from '@masknet/shared'
@@ -94,7 +94,7 @@ export const WalletItem = memo<WalletItemProps>(({ wallet, onClick, isSelected }
 
     const [element] = useHover((isHovering) => (
         <ListItem className={classes.item} onClick={onClick} style={{ paddingRight: isSelected ? 10 : 42 }}>
-            <MaskWalletIcon />
+            <Icon type="maskWallet" />
             <ListItemText className={classes.text}>
                 <Typography className={classes.name}>
                     <Typography component="span" display="flex" alignItems="center">
