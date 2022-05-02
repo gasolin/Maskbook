@@ -3,7 +3,7 @@ import { DarkColor } from '@masknet/theme/base'
 import { formatBalance, useChainId } from '@masknet/web3-shared-evm'
 import { Grid, Link, Typography } from '@mui/material'
 import { makeStyles } from '@masknet/theme'
-import { PoolTogetherTrophy } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useI18N } from '../../../utils'
 import { useManagePoolURL } from '../hooks/usePoolURL'
 import type { AccountPool as Pool } from '../types'
@@ -161,7 +161,7 @@ export function AccountPool(props: AccountPoolProps) {
                 </Grid>
                 <Grid container direction="column" item className={classes.item}>
                     <Grid item className={classes.prize}>
-                        <PoolTogetherTrophy className={classes.trophy} />
+                        <Icon type="poolTogetherTrophy" className={classes.trophy} />
                         <Typography
                             className={classes.prizeAmount}
                             color={DarkColor.textSecondary}

@@ -4,7 +4,7 @@ import { usePostInfoDetails, Plugin, usePluginWrapper } from '@masknet/plugin-in
 import { NetworkPluginID, useChainId } from '@masknet/plugin-infra/web3'
 import { extractTextFromTypedMessage } from '@masknet/typed-message'
 import { parseURL } from '@masknet/shared-base'
-import { GitcoinIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { PreviewCard } from './PreviewCard'
 import { Trans } from 'react-i18next'
 import { base } from '../base'
@@ -43,7 +43,7 @@ const sns: Plugin.SNSAdaptor.Definition = {
             category: 'dapp',
             description: <Trans i18nKey="plugin_gitcoin_description" />,
             name: <Trans i18nKey="plugin_gitcoin_name" />,
-            icon: <GitcoinIcon />,
+            icon: <Icon type="gitcoin" />,
             marketListSortingPriority: 9,
             tutorialLink: 'https://realmasknetwork.notion.site/98ed83784ed4446a8a13fa685c7bddfb',
         },

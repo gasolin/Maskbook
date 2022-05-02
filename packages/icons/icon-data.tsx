@@ -155,6 +155,7 @@ export type IconType =
     | 'maskBox'
     | 'petIcon'
     | 'poolTogether'
+    | 'poolTogetherTrophy'
     | 'savings'
     | 'securityChecker'
     | 'snapshot'
@@ -564,6 +565,7 @@ export const marketTrendIcon = new URL('./plugins/MarketTrend.svg', import.meta.
 export const maskBoxIcon = new URL('./plugins/MaskBox.svg', import.meta.url).href
 export const petIconIcon = new URL('./plugins/PetIcon.svg', import.meta.url).href
 export const poolTogetherIcon = new URL('./plugins/PoolTogether.png', import.meta.url).href
+export const poolTogetherTrophyIcon = new URL('./plugins/PoolTogetherTrophy.svg', import.meta.url).href
 export const savingsIcon = new URL('./plugins/Savings.svg', import.meta.url).href
 export const securityCheckerIcon = new URL('./plugins/SecurityChecker.svg', import.meta.url).href
 export const snapshotIcon = new URL('./plugins/Snapshot.svg', import.meta.url).href
@@ -797,6 +799,7 @@ const icons = {
     maskBox: maskBoxIcon,
     petIcon: petIconIcon,
     poolTogether: poolTogetherIcon,
+    poolTogetherTrophy: poolTogetherTrophyIcon,
     savings: savingsIcon,
     securityChecker: securityCheckerIcon,
     snapshot: snapshotIcon,
