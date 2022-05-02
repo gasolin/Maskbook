@@ -2,7 +2,7 @@ import type { Wallet } from '@masknet/web3-shared-evm'
 import { formatEthereumAddress } from '@masknet/web3-shared-evm'
 import { makeStyles } from '@masknet/theme'
 import { memo, useCallback } from 'react'
-import { EditIcon, Icon, SettingIcon, SuccessIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { NetworkPluginID, useReverseAddress, useWeb3State } from '@masknet/plugin-infra/web3'
 import { ListItem, ListItemText, Typography } from '@mui/material'
 import { FormattedAddress } from '@masknet/shared'
@@ -104,16 +104,30 @@ export const WalletItem = memo<WalletItemProps>(({ wallet, onClick, isSelected }
                                 ({Utils.formatDomainName(domain)})
                             </Typography>
                         ) : null}
-                        {isHovering ? <EditIcon className={classes.edit} onClick={handleRename} /> : null}
+                        {isHovering ? (
+                            <Icon
+                                type="edit"
+                                className={classes.edit}
+                                aria-hidden="false"
+                                aria-role="button"
+                                onClick={handleRename}
+                            />
+                        ) : null}
                     </Typography>
                 </Typography>
                 <Typography className={classes.address}>
                     <FormattedAddress address={wallet.address} size={4} formatter={formatEthereumAddress} />
                     <CopyIconButton className={classes.copy} text={wallet.address} />
-                    <SettingIcon className={classes.setting} onClick={handleEdit} />
+                    <Icon
+                        type="setting"
+                        className={classes.setting}
+                        aria-hidden="false"
+                        aria-role="button"
+                        onClick={handleEdit}
+                    />
                 </Typography>
             </ListItemText>
-            {isSelected ? <SuccessIcon style={{ marginLeft: 8, fontSize: 18 }} /> : null}
+            {isSelected ? <Icon type="success" size={18} style={{ marginLeft: 8 }} /> : null}
         </ListItem>
     ))
 

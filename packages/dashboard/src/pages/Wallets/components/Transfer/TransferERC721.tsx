@@ -41,7 +41,7 @@ import { NetworkType } from '@masknet/public-api'
 import { useAsync, useUpdateEffect } from 'react-use'
 import { multipliedBy } from '@masknet/web3-shared-base'
 import { Services } from '../../../../API'
-import { RightIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 
 const useStyles = makeStyles()((theme) => ({
     disabled: {
@@ -244,7 +244,7 @@ export const TransferERC721 = memo(() => {
                             <FormattedAddress address={registeredAddress} size={4} formatter={Utils?.formatAddress} />
                         </Typography>
                     </Link>
-                    <RightIcon />
+                    <Icon type="right" />
                 </Box>
             )
         }

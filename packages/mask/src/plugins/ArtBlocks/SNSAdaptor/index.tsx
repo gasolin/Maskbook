@@ -31,7 +31,7 @@ const sns: Plugin.SNSAdaptor.Definition = {
             marketListSortingPriority: 15,
             description: <Trans i18nKey="plugin_artblocks_description" />,
             name: <Trans i18nKey="plugin_artblocks_name" />,
-            icon: <Icon type="artBlocks" />,
+            icon: <Icon type="artblocks" />,
         },
     ],
 }

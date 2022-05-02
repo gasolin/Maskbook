@@ -1,4 +1,4 @@
-import { RightIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import {
     NetworkPluginID,
     TokenType,
@@ -196,7 +196,7 @@ export const TransferERC20 = memo<TransferERC20Props>(({ token }) => {
                             <FormattedAddress address={registeredAddress} size={4} formatter={Utils?.formatAddress} />
                         </Typography>
                     </Link>
-                    <RightIcon />
+                    <Icon type="right" />
                 </Box>
             )
         }

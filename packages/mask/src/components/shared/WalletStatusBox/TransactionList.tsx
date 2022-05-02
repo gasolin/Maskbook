@@ -1,4 +1,4 @@
-import { LinkOutIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useWeb3State } from '@masknet/plugin-infra/web3'
 import { WalletMessages } from '@masknet/plugin-wallet'
 import { makeStyles } from '@masknet/theme'
@@ -166,7 +166,7 @@ const Transaction: FC<TransactionProps> = ({ chainId, transaction: tx, onClear =
                     href={Utils?.resolveTransactionLink?.(chainId, tx.hash)}
                     target="_blank"
                     rel="noopener noreferrer">
-                    <LinkOutIcon className={classes.linkIcon} />
+                    <Icon type="linkOut" className={classes.linkIcon} />
                 </Link>
             </Grid>
             <Grid item className={classes.cell} md={2} justifyContent="center">

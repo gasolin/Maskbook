@@ -1,8 +1,8 @@
-import { MenuItem, Stack, Typography } from '@mui/material'
-import { makeStyles } from '@masknet/theme'
-import { SuccessIcon } from '@masknet/icons'
-import { WalletIcon, useMenu } from '@masknet/shared'
+import { Icon } from '@masknet/icons'
 import { useChainId, useNetworkDescriptors, useProviderDescriptor, useWeb3UI } from '@masknet/plugin-infra/web3'
+import { useMenu, WalletIcon } from '@masknet/shared'
+import { makeStyles } from '@masknet/theme'
+import { MenuItem, Stack, Theme, Typography, useMediaQuery } from '@mui/material'
 
 const useStyles = makeStyles()((theme) => ({
     item: {
@@ -25,6 +25,7 @@ export const useNetworkSelector = () => {
     const providerDescriptor = useProviderDescriptor()
     const networkDescriptors = useNetworkDescriptors()
     const { NetworkIconClickBait } = useWeb3UI().SelectNetworkMenu ?? {}
+    const isXs = useMediaQuery<Theme>((theme) => theme.breakpoints.down('xs'))
 
     const networkMenu = useMenu(
         ...(networkDescriptors
@@ -34,7 +35,9 @@ export const useNetworkSelector = () => {
                     <MenuItem sx={{ mx: 2, py: 1 }} classes={{ root: classes.item }} key={network.ID}>
                         <Stack direction="row" gap={0.5} alignItems="center">
                             <Stack justifyContent="center" width={18}>
-                                {network.chainId === currentChainId && <SuccessIcon sx={{ fontSize: 18 }} />}
+                                {network.chainId === currentChainId && (
+                                    <Icon type="success" size={isXs ? 18 : undefined} />
+                                )}
                             </Stack>
                             <Stack justifyContent="center" alignItems="center" width={30}>
                                 <WalletIcon networkIcon={network.icon} size={30} />

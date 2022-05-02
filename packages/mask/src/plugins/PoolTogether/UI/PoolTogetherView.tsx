@@ -1,4 +1,4 @@
-import { RefreshIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { DarkColor } from '@masknet/theme/base'
 import { ChainId, usePoolTogetherConstants } from '@masknet/web3-shared-evm'
 import { Box, Card, CardContent, CircularProgress, Paper, Tab, Tabs, Typography } from '@mui/material'
@@ -112,7 +112,16 @@ export function PoolTogetherView(props: PoolTogetherViewProps) {
     }
 
     if (error || errorMask) {
-        return <RefreshIcon className={classes.refresh} color="primary" onClick={error ? retry : retryMask} />
+        return (
+            <Icon
+                type="refresh"
+                color="inherit"
+                className={classes.refresh}
+                aria-hidden="false"
+                aria-role="button"
+                onClick={error ? retry : retryMask}
+            />
+        )
     }
 
     if (pools.length === 0) {

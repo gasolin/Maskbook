@@ -2,7 +2,7 @@ import type { Wallet } from '@masknet/web3-shared-evm'
 import { formatEthereumAddress } from '@masknet/web3-shared-evm'
 import { makeStyles } from '@masknet/theme'
 import { memo } from 'react'
-import { Icon, SuccessIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { ListItem, ListItemText, Typography } from '@mui/material'
 import { FormattedAddress } from '@masknet/shared'
 import { CopyIconButton } from '../../../components/CopyIconButton'
@@ -71,7 +71,7 @@ export const WalletItem = memo<WalletItemProps>(({ wallet, onClick, isSelected }
                     <CopyIconButton className={classes.copy} text={wallet.address} />
                 </Typography>
             </ListItemText>
-            {isSelected ? <SuccessIcon style={{ marginLeft: 8, fontSize: 18 }} /> : null}
+            {isSelected ? <Icon type="success" style={{ marginLeft: 8, fontSize: 18 }} /> : null}
         </ListItem>
     )
 })

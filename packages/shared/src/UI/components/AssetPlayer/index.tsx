@@ -6,7 +6,7 @@ import { mediaViewerUrl } from '../../../constants'
 import { useUpdateEffect } from 'react-use'
 import { makeStyles, useStylesExtends } from '@masknet/theme'
 import { Box, SvgIconProps } from '@mui/material'
-import { AssetLoadingIcon, Icon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 
 interface ERC721TokenQuery {
     contractAddress: string
@@ -200,7 +200,7 @@ export const AssetPlayer = memo<AssetPlayerProps>((props) => {
                       ) : (
                           <Icon type="maskPlaceholder" className={classes.errorIcon} />
                       ))
-                    : props.loadingIcon ?? <AssetLoadingIcon className={classes.loadingIcon} />}
+                    : props.loadingIcon ?? <Icon type="assetLoading" className={classes.loadingIcon} />}
             </Box>
             {IframeResizerMemo}
         </>

@@ -15,7 +15,7 @@ import type { MaskSearchableListItemProps } from '@masknet/theme'
 import { makeStyles, MaskLoadingButton } from '@masknet/theme'
 import { some } from 'lodash-unified'
 import { useCallback, useMemo } from 'react'
-import { LoadingIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useSharedI18N } from '../../../locales'
 import { LoadingAnimation } from '../LoadingAnimation'
 import BigNumber from 'bignumber.js'
@@ -71,6 +71,11 @@ const useStyles = makeStyles()((theme) => ({
         fontSize: 14,
         fontWeight: 500,
         lineHeight: '20px',
+    },
+    loadingIcon: {
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 14,
+        },
     },
 }))
 
@@ -134,7 +139,7 @@ export const getERC20TokenListItem =
                     size="small"
                     className={classes.importButton}
                     soloLoading
-                    loadingIndicator={<LoadingIcon sx={{ fontSize: 14 }} />}>
+                    loadingIndicator={<Icon type="loading" className={classes.loadingIcon} />}>
                     {t.import()}
                 </MaskLoadingButton>
             )

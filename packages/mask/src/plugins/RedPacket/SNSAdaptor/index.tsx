@@ -20,7 +20,7 @@ import RedPacketDialog from './RedPacketDialog'
 import { RedPacketInPost } from './RedPacketInPost'
 import { RedPacketNftInPost } from './RedPacketNftInPost'
 import { Trans } from 'react-i18next'
-import { RedPacketIcon, NFTRedPacketIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { CrossIsolationMessages } from '@masknet/shared-base'
 import { ApplicationEntry } from '@masknet/shared'
 
@@ -74,7 +74,7 @@ const sns: Plugin.SNSAdaptor.Definition = {
                 return {
                     text: (
                         <div style={containerStyle}>
-                            <NFTRedPacketIcon style={badgeSvgIconSize} />
+                            <Icon type="nftRedPacket" style={badgeSvgIconSize} />
                             {payload.message ? payload.message : 'An NFT Lucky Drop'}
                         </div>
                     ),
@@ -86,14 +86,14 @@ const sns: Plugin.SNSAdaptor.Definition = {
         dialog: RedPacketDialog,
         label: (
             <>
-                <RedPacketIcon style={badgeSvgIconSize} />
+                <Icon type="redPacket" style={badgeSvgIconSize} />
                 Lucky Drop
             </>
         ),
     },
     ApplicationEntries: [
         (() => {
-            const icon = <RedPacketIcon />
+            const icon = <Icon type="redPacket" />
             const name = <Trans i18nKey="plugin_red_packet_name" />
             const recommendFeature = {
                 description: <Trans i18nKey="plugin_red_packet_recommend_feature_description" />,
@@ -157,7 +157,7 @@ function ERC20RedpacketBadge(props: ERC20RedpacketBadgeProps) {
 
     return (
         <div style={containerStyle}>
-            <RedPacketIcon style={badgeSvgIconSize} /> A Lucky Drop with{' '}
+            <Icon type="redPacket" style={badgeSvgIconSize} /> A Lucky Drop with{' '}
             {formatBalance(payload.total, tokenDetailed?.decimals ?? 0)} $
             {tokenDetailed?.symbol ?? tokenDetailed?.name ?? 'Token'} from {payload.sender.name}
         </div>

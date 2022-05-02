@@ -7,7 +7,7 @@ import { ChainId, formatBalance, isSameAddress, useAccount, useAssets, useWeb3 }
 import { ProviderIconURLs } from './IconURL'
 import { useI18N } from '../../../utils'
 import { SavingsProtocol, TabType } from '../types'
-import { CircleLoadingIcon, DirectIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 
 const useStyles = makeStyles()((theme, props) => ({
     containerWrap: {
@@ -143,7 +143,7 @@ export function SavingsTable({ chainId, tab, protocols, setTab, setSelectedProto
 
             {loading || getAssetsLoading ? (
                 <div className={classes.placeholder}>
-                    <CircleLoadingIcon className={classes.animated} />
+                    <Icon type="circleLoading" className={classes.animated} />
                     <Typography className={classes.loading}>{t('popups_loading')}</Typography>
                 </div>
             ) : protocols.length ? (
@@ -209,7 +209,7 @@ export function SavingsTable({ chainId, tab, protocols, setTab, setSelectedProto
                 </div>
             ) : (
                 <div className={classes.placeholder}>
-                    <DirectIcon className={classes.direct} />
+                    <Icon type="direct" className={classes.direct} />
                 </div>
             )}
         </Box>

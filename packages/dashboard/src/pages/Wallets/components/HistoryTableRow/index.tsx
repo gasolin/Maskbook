@@ -1,4 +1,4 @@
-import { LinkOutIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useReverseAddress, useWeb3State } from '@masknet/plugin-infra/web3'
 import { makeStyles, MaskColorVar } from '@masknet/theme'
 import type { Transaction } from '@masknet/web3-shared-evm'
@@ -134,7 +134,7 @@ export const HistoryTableRowUI = memo<HistoryTableRowUIProps>(
                             href={Utils?.resolveTransactionLink?.(selectedChainId, transaction.id)}
                             target="_blank"
                             rel="noopener noreferrer">
-                            <LinkOutIcon className={classes.linkIcon} />
+                            <Icon type="linkOut" className={classes.linkIcon} />
                         </Link>
                     </Box>
                 </TableCell>

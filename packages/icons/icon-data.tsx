@@ -90,6 +90,7 @@ export type IconType =
     | 'popupLink'
     | 'popupRestore'
     | 'publicKey'
+    | 'redPacket'
     | 'refresh'
     | 'restore'
     | 'restoreBlue'
@@ -110,7 +111,7 @@ export type IconType =
     | 'star'
     | 'success'
     | 'swap'
-    | 'swapColorfulIcon'
+    | 'swapColorful'
     | 'synchronize'
     | 'tick'
     | 'tip'
@@ -136,7 +137,7 @@ export type IconType =
     | 'menuSettingsActive'
     | 'menuWallets'
     | 'menuWalletsActive'
-    | 'artBlocks'
+    | 'artblocks'
     | 'collectibles'
     | 'crossBridge'
     | 'currency'
@@ -431,6 +432,7 @@ export const popupRestoreIcon = new URL('./general/PopupRestore.svg', import.met
 export const publicKeyDarkIcon = new URL('./general/PublicKey.dark.svg', import.meta.url).href
 export const publicKeyLightIcon = new URL('./general/PublicKey.light.svg', import.meta.url).href
 export const publicKeyIcon = new URL('./general/PublicKey.svg', import.meta.url).href
+export const redPacketIcon = new URL('./general/RedPacket.svg', import.meta.url).href
 export const refreshIcon = new URL('./general/Refresh.svg', import.meta.url).href
 export const restoreIcon = new URL('./general/Restore.svg', import.meta.url).href
 export const restoreBlueIcon = new URL('./general/RestoreBlue.svg', import.meta.url).href
@@ -475,7 +477,7 @@ export const squareBackIcon = new URL('./general/SquareBack.svg', import.meta.ur
 export const starIcon = new URL('./general/Star.svg', import.meta.url).href
 export const successIcon = new URL('./general/Success.svg', import.meta.url).href
 export const swapIcon = new URL('./general/Swap.svg', import.meta.url).href
-export const swapColorfulIconIcon = new URL('./general/SwapColorfulIcon.svg', import.meta.url).href
+export const swapColorfulIcon = new URL('./general/SwapColorful.svg', import.meta.url).href
 export const synchronizeIcon = new URL('./general/Synchronize.svg', import.meta.url).href
 export const tickIcon = new URL('./general/Tick.svg', import.meta.url).href
 export const tipIcon = new URL('./general/Tip.svg', import.meta.url).href
@@ -501,7 +503,7 @@ export const menuSettingsIcon = new URL('./menus/MenuSettings.svg', import.meta.
 export const menuSettingsActiveIcon = new URL('./menus/MenuSettingsActive.svg', import.meta.url).href
 export const menuWalletsIcon = new URL('./menus/MenuWallets.svg', import.meta.url).href
 export const menuWalletsActiveIcon = new URL('./menus/MenuWalletsActive.svg', import.meta.url).href
-export const artBlocksIcon = new URL('./plugins/ArtBlocks.svg', import.meta.url).href
+export const artblocksIcon = new URL('./plugins/artblocks.png', import.meta.url).href
 export const collectiblesIcon = new URL('./plugins/Collectibles.svg', import.meta.url).href
 export const crossBridgeIcon = new URL('./plugins/CrossBridge.svg', import.meta.url).href
 export const currencyIcon = (
@@ -727,6 +729,7 @@ const icons = {
     popupRestore: popupRestoreIcon,
     'publicKey.dark': publicKeyDarkIcon,
     publicKey: publicKeyIcon,
+    redPacket: redPacketIcon,
     refresh: refreshIcon,
     restore: restoreIcon,
     restoreBlue: restoreBlueIcon,
@@ -748,7 +751,7 @@ const icons = {
     star: starIcon,
     success: successIcon,
     swap: swapIcon,
-    swapColorfulIcon: swapColorfulIconIcon,
+    swapColorful: swapColorfulIcon,
     synchronize: synchronizeIcon,
     tick: tickIcon,
     tip: tipIcon,
@@ -774,7 +777,7 @@ const icons = {
     menuSettingsActive: menuSettingsActiveIcon,
     menuWallets: menuWalletsIcon,
     menuWalletsActive: menuWalletsActiveIcon,
-    artBlocks: artBlocksIcon,
+    artblocks: artblocksIcon,
     collectibles: collectiblesIcon,
     crossBridge: crossBridgeIcon,
     currency: currencyIcon,

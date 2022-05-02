@@ -3,7 +3,7 @@ import { makeStyles } from '@masknet/theme'
 import { memo, useMemo } from 'react'
 import { Box, Button, ListItem, ListItemText, Typography } from '@mui/material'
 import { formatEthereumAddress, TransactionStatusType } from '@masknet/web3-shared-evm'
-import { ArrowRightIcon, CircleCloseIcon, InteractionCircleIcon, LoaderIcon, UploadIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { RecentTransactionDescription } from '../../../../../../plugins/Wallet/SNSAdaptor/WalletStatusDialog/TransactionDescription'
 import formatDateTime from 'date-fns/format'
 import { useI18N } from '../../../../../../utils'
@@ -78,14 +78,15 @@ export const ActivityListItem = memo<ActivityListItemProps>(
         const transactionIcon = useMemo(() => {
             switch (transaction.status) {
                 case TransactionStatusType.NOT_DEPEND:
-                    return <LoaderIcon className={classes.loader} />
+                    return <Icon type="loader" className={classes.loader} />
                 case TransactionStatusType.CANCELLED:
                 case TransactionStatusType.SUCCEED:
-                    if (transactionComputedPayloadName === 'transfer') return <UploadIcon className={classes.send} />
-                    return <InteractionCircleIcon className={classes.interaction} />
+                    if (transactionComputedPayloadName === 'transfer')
+                        return <Icon type="upload" className={classes.send} />
+                    return <Icon type="interactionCircle" className={classes.interaction} />
                 case TransactionStatusType.FAILED:
                 default:
-                    return <CircleCloseIcon style={{ fill: 'none' }} />
+                    return <Icon type="circleClose" />
             }
         }, [transaction.status, transactionComputedPayloadName])
         return (
@@ -133,7 +134,7 @@ export const ActivityListItem = memo<ActivityListItemProps>(
                         </Typography>
                     ) : null}
                 </ListItemText>
-                <ArrowRightIcon className={classes.arrow} style={{ fill: 'none' }} />
+                <Icon type="arrowRight" className={classes.arrow} />
             </ListItem>
         )
     },

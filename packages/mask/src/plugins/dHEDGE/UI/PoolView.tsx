@@ -1,4 +1,4 @@
-import { RefreshIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useChainId } from '@masknet/web3-shared-evm'
 import { Box, Card, CardContent, CardHeader, CircularProgress, Paper, Tab, Tabs, Typography } from '@mui/material'
 import { makeStyles } from '@masknet/theme'
@@ -103,7 +103,14 @@ export function PoolView(props: PoolViewProps) {
                 <br />
                 {(error as any)?.message || errorAllowedTokens?.message}
                 <br />
-                <RefreshIcon className={classes.refresh} color="primary" onClick={error ? retry : retryAllowedTokens} />
+                <Icon
+                    type="refresh"
+                    className={classes.refresh}
+                    color="primary"
+                    aria-hidden="false"
+                    role="button"
+                    onClick={error ? retry : retryAllowedTokens}
+                />
             </Typography>
         )
 

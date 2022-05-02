@@ -1,7 +1,7 @@
 import { memo, useContext } from 'react'
 import { makeStyles } from '@masknet/theme'
 import { Box, Typography } from '@mui/material'
-import { Icon, SquareBack } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useNavigate } from 'react-router-dom'
 import { PageTitleContext } from '../../context'
 
@@ -57,7 +57,7 @@ export const NormalHeader = memo<NormalHeaderProps>(({ onlyTitle }) => {
         <Box className={classes.container} style={{ justifyContent: showTitle ? 'center' : 'flex-start' }}>
             {showTitle ? (
                 <>
-                    <SquareBack className={classes.back} onClick={() => navigate(-1)} />
+                    <Icon type="squareBack" className={classes.back} onClick={() => navigate(-1)} />
                     <Typography className={classes.title}>{title}</Typography>
                 </>
             ) : (

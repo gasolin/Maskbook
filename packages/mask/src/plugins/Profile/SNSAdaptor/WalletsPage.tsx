@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Trans } from 'react-i18next'
 import { useCopyToClipboard } from 'react-use'
 import { Copy, ExternalLink } from 'react-feather'
-import { RewardIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { makeStyles } from '@masknet/theme'
 import { WalletMessages } from '@masknet/plugin-wallet'
 import { NetworkPluginID, useNetworkDescriptor } from '@masknet/plugin-infra/web3'
@@ -96,7 +96,7 @@ export function WalletsPage() {
                         </ListItemIcon>
                         <ListItemText />
                         <ListItemIcon>
-                            <RewardIcon />
+                            <Icon type="reward" />
                             {t('tip')}
                         </ListItemIcon>
                     </ListItem>
