@@ -11,6 +11,7 @@ importers:
 
   .:
     specifiers:
+      '@babel/runtime': 7.17.9
       '@commitlint/cli': ^17.0.0
       '@commitlint/config-conventional': ^17.0.0
       '@dimensiondev/eslint-plugin': 0.0.2-20220516081411-2649814
@@ -69,6 +70,7 @@ importers:
       web3-core: 1.7.3
       web3-core-method: 1.7.3
     dependencies:
+      '@babel/runtime': 7.17.9
       '@dimensiondev/kit': 0.0.0-20220501022859-60d5533
       '@emotion/cache': 11.7.1
       '@emotion/react': 11.9.0_7cpxmzzodpxnolj5zcc5cr63ji
@@ -15640,7 +15642,7 @@ packages:
       isobject: 3.0.1
 
   /defined/1.0.0:
-    resolution: {integrity: sha512-Y2caI5+ZwS5c3RiNDJ6u53VhQHv+hHKwhkI1iHvceKUHw9Df6EK2zRLfjejRgMuCuxK7PfSWIMwWecceVvThjQ==}
+    resolution: {integrity: sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=}
     dev: false
 
   /del/4.1.1:
@@ -15716,7 +15718,7 @@ packages:
     dev: true
 
   /detect-indent/4.0.0:
-    resolution: {integrity: sha512-BDKtmHlOzwI7iRuEkhzsnPoi5ypEhWAJB5RvHWe1kMr06js3uK5B3734i3ui5Yd+wOJV1cpE4JnivPD283GU/A==}
+    resolution: {integrity: sha1-920GQ1LN9Docts5hnE7jqUdd4gg=}
     engines: {node: '>=0.10.0'}
     dependencies:
       repeating: 2.0.1
@@ -15862,7 +15864,7 @@ packages:
     dev: false
 
   /doctrine/0.7.2:
-    resolution: {integrity: sha512-qiB/Rir6Un6Ad/TIgTRzsremsTGWzs8j7woXvp14jgq00676uBiBT5eUOi+FgRywZFVy5Us/c04ISRpZhRbS6w==}
+    resolution: {integrity: sha1-fLhgNZujvpDgQLJrcpzkv6ZUxSM=}
     engines: {node: '>=0.10.0'}
     dependencies:
       esutils: 1.1.6
@@ -16117,7 +16119,7 @@ packages:
     optional: true
 
   /emailjs/2.2.0:
-    resolution: {integrity: sha512-J9HNx13GA5DnJma10YxsSqYCErTyB0KoVflTddPTyKlEVHM0MckZXn/zDqovdacwWkHCxqC9AKVY8GMPaGvaGQ==}
+    resolution: {integrity: sha1-ulsj5KSwpFEPZS6HOxVOlAe2ygM=}
     dependencies:
       addressparser: 0.3.2
       emailjs-mime-codec: 2.0.9
@@ -16893,7 +16895,7 @@ packages:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
   /esutils/1.1.6:
-    resolution: {integrity: sha512-RG1ZkUT7iFJG9LSHr7KDuuMSlujfeTtMNIcInURxKAxhMtwQhI3NrQhz26gZQYlsYZQKzsnwtpKrFKj9K9Qu1A==}
+    resolution: {integrity: sha1-wBzKqa5LiXxtDD4hCuUvPHqEQ3U=}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -16958,7 +16960,7 @@ packages:
     dev: false
 
   /eth-query/2.1.2:
-    resolution: {integrity: sha512-srES0ZcvwkR/wd5OQBRA1bIJMww1skfGS0s8wlwK3/oNP4+wnds60krvu5R1QbpRQjMmpG5OMIWro5s7gvDPsA==}
+    resolution: {integrity: sha1-1nQdkAAQa1FRDHLbktY2VFam2l4=}
     dependencies:
       json-rpc-random-id: 1.0.1
       xtend: 4.0.2
@@ -16971,7 +16973,7 @@ packages:
     dev: false
 
   /eth-sig-util/1.4.2:
-    resolution: {integrity: sha512-iNZ576iTOGcfllftB73cPB5AN+XUQAT/T8xzsILsghXC1o8gJUqe3RHlcDqagu+biFpYQ61KQrZZJza8eRSYqw==}
+    resolution: {integrity: sha1-jZWCAsftuq6Dlwf7pvCf8ydgYhA=}
     deprecated: Deprecated in favor of '@metamask/eth-sig-util'
     dependencies:
       ethereumjs-abi: github.com/ethereumjs/ethereumjs-abi/ee3994657fa7a427238e6ba92a84d0b529bbcde0
@@ -16988,7 +16990,7 @@ packages:
       js-sha3: 0.8.0
 
   /ethereum-common/0.0.18:
-    resolution: {integrity: sha512-EoltVQTRNg2Uy4o84qpa2aXymXDJhxm7eos/ACOg0DG4baAbMjhbdAEsx9GeE8sC3XCxnYvrrzZDH8D8MtA2iQ==}
+    resolution: {integrity: sha1-L9w1dvIykDNYl26znaeDIT/5Uj8=}
     dev: false
 
   /ethereum-common/0.2.0:
@@ -17616,7 +17618,7 @@ packages:
     dev: false
 
   /fake-merkle-patricia-tree/1.0.1:
-    resolution: {integrity: sha512-Tgq37lkc9pUIgIKw5uitNUKcgcYL3R6JvXtKQbOf/ZSavXbidsksgp/pAY6p//uhw0I4yoMsvTSovvVIsk/qxA==}
+    resolution: {integrity: sha1-S4w6z7Ugr635hgsfFM2M40As3dM=}
     dependencies:
       checkpoint-store: 1.1.0
     dev: false
@@ -17761,7 +17763,7 @@ packages:
     dev: false
 
   /fetch-ponyfill/4.1.0:
-    resolution: {integrity: sha512-knK9sGskIg2T7OnYLdZ2hZXn0CtDrAIBxYQLpmEf0BqfdWnwmM1weccUl5+4EdA44tzNSFAuxITPbXtPehUB3g==}
+    resolution: {integrity: sha1-rjzl9zLGReq4fkroeTQUcJsjmJM=}
     dependencies:
       node-fetch: 1.7.3
     dev: false
@@ -17912,7 +17914,7 @@ packages:
     dev: true
 
   /find-versions/2.0.0:
-    resolution: {integrity: sha512-nzvoTkgyiTcXOT9PNHYWP2wlAoNbXanK/FnlHnB6v2yA1HoyDNTxN08+NobUIXL0qnBZPtegjXgohsQa8YiT+Q==}
+    resolution: {integrity: sha1-KtkNSQ9oKMGqQCks9wmsMxghDDw=}
     engines: {node: '>=0.10.0'}
     dependencies:
       array-uniq: 1.0.3
@@ -18895,7 +18897,7 @@ packages:
     engines: {node: '>=6'}
 
   /has-ansi/2.0.0:
-    resolution: {integrity: sha512-C8vBJ8DwUCx19vhm7urhTuUsr4/IyP6l4VzNQDv+ryHQObW3TTTp9yB68WpYgRe2bbaGuZ/se74IqFeVnMnLZg==}
+    resolution: {integrity: sha1-NPUEnOHs3ysGSa8+8k5F7TVBbZE=}
     engines: {node: '>=0.10.0'}
     dependencies:
       ansi-regex: 2.1.1
@@ -19122,7 +19124,7 @@ packages:
       react-is: 16.13.1
 
   /home-or-tmp/2.0.0:
-    resolution: {integrity: sha512-ycURW7oUxE2sNiPVw1HVEFsW+ecOpJ5zaj7eC0RlwhibhRBod20muUN8qu/gzx956YrLolVvs1MTXwKgC2rVEg==}
+    resolution: {integrity: sha1-42w/LSyufXRqhX440Y1fMqeILbg=}
     engines: {node: '>=0.10.0'}
     dependencies:
       os-homedir: 1.0.2
@@ -25569,7 +25571,7 @@ packages:
   /resolve/2.0.0-next.3:
     resolution: {integrity: sha512-W8LucSynKUIDu9ylraa7ueVZ7hc0uAgJBxVsQSKOXOyle8a93qXhcz+XAXZ8bIq2d6i4Ehddn6Evt+0/UwKk6Q==}
     dependencies:
-      is-core-module: 2.9.0
+      is-core-module: 2.8.1
       path-parse: 1.0.7
     dev: true
 
