@@ -56,7 +56,7 @@ const useStyles = makeStyles<StyleProps>()((theme, props) => {
             marginTop: theme.spacing(2),
             zIndex: 1,
         },
-        footnote: {
+        sourceNote: {
             fontSize: 10,
             marginRight: theme.spacing(1),
         },

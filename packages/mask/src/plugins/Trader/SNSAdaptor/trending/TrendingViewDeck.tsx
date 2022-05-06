@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Avatar, Button, CardContent, CardHeader, IconButton, Paper, Typography } from '@mui/material'
+import { Avatar, Button, CardContent, CardHeader, IconButton, Paper, Stack, Typography } from '@mui/material'
 import { makeStyles, useStylesExtends } from '@masknet/theme'
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
@@ -16,13 +16,15 @@ import { TrendingCard, TrendingCardProps } from './TrendingCard'
 import { PluginTransakMessages } from '../../../Transak/messages'
 import { useAccount, formatCurrency } from '@masknet/web3-shared-evm'
 import type { FootnoteMenuOption } from '../trader/FootnoteMenu'
-import { TradeFooter } from '../trader/TradeFooter'
+import { TradeDataSource } from '../trader/TradeDataSource'
 import { currentDataProviderSettings, getCurrentPreferredCoinIdSettings } from '../../settings'
 import { CoinMenu, CoinMenuOption } from './CoinMenu'
 import { useTransakAllowanceCoin } from '../../../Transak/hooks/useTransakAllowanceCoin'
 import { CoinSafetyAlert } from './CoinSafetyAlert'
 import { PluginId } from '@masknet/plugin-infra'
 import { useActivatedPluginsSNSAdaptor } from '@masknet/plugin-infra/content-script'
+import { PluginHeader } from './PluginHeader'
+import { Box } from '@mui/system'
 
 const useStyles = makeStyles()((theme) => {
     return {
@@ -39,14 +41,20 @@ const useStyles = makeStyles()((theme) => {
             paddingTop: 0,
             paddingBottom: 0,
         },
+        cardHeader: {
+            padding: theme.spacing(2),
+            height: 196,
+            background: theme.palette.background.modalTitle,
+        },
         header: {
             display: 'flex',
             position: 'relative',
         },
         headline: {
-            display: 'flex',
+            marginTop: 30,
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             position: 'relative',
         },
         title: {
@@ -59,6 +67,8 @@ const useStyles = makeStyles()((theme) => {
             whiteSpace: 'nowrap',
             textOverflow: 'ellipsis',
             overflow: 'hidden',
+            fontSize: 18,
+            fontWeight: 700,
         },
         symbol: {
             fontSize: 12,
@@ -66,24 +76,27 @@ const useStyles = makeStyles()((theme) => {
             marginLeft: theme.spacing(0.5),
             marginRight: theme.spacing(0.5),
         },
-        buy: {
-            right: 0,
-            position: 'absolute',
-        },
+        buy: {},
         arrowIcon: {
             color: theme.palette.text.primary,
         },
         rank: {
-            color: theme.palette.text.secondary,
-            fontWeight: 300,
-            marginRight: theme.spacing(1),
+            display: 'inline-flex',
+            padding: theme.spacing(0.25, 0.5),
+            color: theme.palette.public.white,
+            fontWeight: 400,
+            fontSize: 10,
+            background: theme.palette.public.dark,
+            borderRadius: theme.spacing(0.5),
         },
         avatar: {
+            width: 24,
+            height: 24,
             backgroundColor: theme.palette.common.white,
         },
         avatarFallback: {
-            width: 40,
-            height: 40,
+            width: 24,
+            height: 24,
         },
     }
 })
@@ -152,6 +165,73 @@ export function TrendingViewDeck(props: TrendingViewDeckProps) {
 
     return (
         <TrendingCard {...TrendingCardProps}>
+            <Stack className={classes.cardHeader}>
+                <PluginHeader>
+                    <TradeDataSource
+                        showDataProviderIcon={showDataProviderIcon}
+                        dataProvider={dataProvider}
+                        dataProviders={dataProviders}
+                        onDataProviderChange={onDataProviderChange}
+                    />
+                </PluginHeader>
+                <Stack className={classes.headline}>
+                    <Stack>
+                        <Stack flexDirection="row">
+                            {typeof coin.market_cap_rank === 'number' ? (
+                                <Typography component="span" flex={0} className={classes.rank} title="Index Cap Rank">
+                                    #{coin.market_cap_rank}
+                                </Typography>
+                            ) : null}
+                            <Box flex={1} />
+                        </Stack>
+                        <Stack flexDirection="row">
+                            <Linking href={first(coin.home_urls)}>
+                                <Avatar className={classes.avatar} src={coin.image_url} alt={coin.symbol}>
+                                    {trending.coin.contract_address ? (
+                                        <TokenIcon
+                                            classes={{ icon: classes.avatarFallback }}
+                                            address={trending.coin.contract_address}
+                                        />
+                                    ) : null}
+                                </Avatar>
+                            </Linking>
+                            <Typography className={classes.title} variant="h6">
+                                <Linking
+                                    href={first(coin.home_urls)}
+                                    LinkProps={{ className: classes.name, title: coin.name.toUpperCase() }}>
+                                    {coin.name.toUpperCase()}
+                                </Linking>
+                                <span className={classes.symbol}>({coin.symbol.toUpperCase()})</span>
+                            </Typography>
+                            {coins.length > 1 ? (
+                                <CoinMenu
+                                    options={coins.map((coin) => ({
+                                        coin,
+                                        value: coin.id,
+                                    }))}
+                                    selectedIndex={coins.findIndex((x) => x.id === coin.id)}
+                                    onChange={onCoinMenuChange}>
+                                    <IconButton className={classes.arrowIcon} size="small">
+                                        <ArrowDropDownIcon />
+                                    </IconButton>
+                                </CoinMenu>
+                            ) : null}
+                        </Stack>
+                    </Stack>
+                    <Stack>
+                        {transakPluginEnabled && account && trending.coin.symbol && isAllowanceCoin ? (
+                            <Button
+                                className={classes.buy}
+                                startIcon={<MonetizationOnOutlinedIcon />}
+                                variant="text"
+                                color="primary"
+                                onClick={onBuyButtonClicked}>
+                                {t('buy_now')}
+                            </Button>
+                        ) : null}
+                    </Stack>
+                </Stack>
+            </Stack>
             <CardHeader
                 className={classes.header}
                 avatar={
@@ -242,16 +322,6 @@ export function TrendingViewDeck(props: TrendingViewDeckProps) {
                     {children}
                 </Paper>
             </CardContent>
-
-            <TradeFooter
-                classes={{
-                    footer: classes.footer,
-                }}
-                showDataProviderIcon={showDataProviderIcon}
-                dataProvider={dataProvider}
-                dataProviders={dataProviders}
-                onDataProviderChange={onDataProviderChange}
-            />
         </TrendingCard>
     )
 }

@@ -34,7 +34,7 @@ const useStyles = makeStyles()((theme) => {
             borderTop: `solid 1px ${theme.palette.divider}`,
             justifyContent: 'space-between',
         },
-        footnote: {
+        sourceNote: {
             fontSize: 10,
             marginRight: theme.spacing(1),
         },
