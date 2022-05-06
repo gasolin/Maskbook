@@ -82,16 +82,5 @@ globalThis.regeneratorRuntime = undefined
     }
 }
 
-{
-    if (typeof trustedTypes === 'object') {
-        trustedTypes.createPolicy('default', {
-            createHTML: (string) => {
-                console.trace('[Trusted Types](default policy): Possible XSS happened. Please remove it.', string)
-                return string
-            },
-        })
-    }
-}
-
 // As the return value of the executeScript
 undefined

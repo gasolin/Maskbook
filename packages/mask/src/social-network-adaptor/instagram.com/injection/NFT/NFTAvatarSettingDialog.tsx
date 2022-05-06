@@ -17,6 +17,7 @@ import { activatedSocialNetworkUI } from '../../../../social-network'
 import { delay } from '@dimensiondev/kit'
 import type { NonFungibleToken } from '@masknet/web3-shared-base'
 import type { ChainId, SchemaType } from '@masknet/web3-shared-evm'
+import { parseMetaTagOGImageContent } from '@masknet/shared-base'
 
 const useStyles = makeStyles()(() => ({
     root: {
@@ -49,12 +50,8 @@ export function NFTAvatarSettingDialog() {
                 const response = await fetch(url)
                 const htmlString = await response.text()
 
-                const html = document.createElement('html')
-                html.innerHTML = htmlString
-
-                const metaTag = html.querySelector<HTMLMetaElement>('meta[property="og:image"]')
-
-                if (!metaTag?.content) return
+                const metaTagContent = parseMetaTagOGImageContent(htmlString)
+                if (!metaTagContent) return
 
                 const avatarInfo = await PluginNFTAvatarRPC.saveNFTAvatar(
                     wallet.address,
@@ -62,7 +59,7 @@ export function NFTAvatarSettingDialog() {
                         userId: identity.identifier.userId,
                         tokenId: token.tokenId,
                         address: token.contract.address,
-                        avatarId: getAvatarId(metaTag.content),
+                        avatarId: getAvatarId(metaTagContent),
                     } as AvatarMetaDB,
                     identity.identifier.network,
                     RSS3_KEY_SNS.INSTAGRAM,
