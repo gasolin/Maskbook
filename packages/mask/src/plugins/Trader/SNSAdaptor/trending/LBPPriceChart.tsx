@@ -6,12 +6,12 @@ import { usePriceLineChart } from '../../../hooks/usePriceLineChart'
 import type { Currency } from '../../types'
 
 const DEFAULT_DIMENSION: Dimension = {
-    top: 32,
-    right: 16,
-    bottom: 32,
-    left: 16,
+    top: 16,
+    right: 0,
+    bottom: 16,
+    left: 0,
     width: 598,
-    height: 269,
+    height: 174,
 }
 
 export interface PriceChartProps extends withClasses<'root'> {
