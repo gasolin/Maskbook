@@ -2,7 +2,7 @@ import type { AsyncStateRetry } from 'react-use/lib/useAsyncRetry'
 import { Box, Card, CircularProgress, Typography, Paper, Link } from '@mui/material'
 import { useStylesExtends, makeStyles, MaskColorVar } from '@masknet/theme'
 import { ImageIcon } from '@masknet/shared'
-import { WarningTriangleIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { NetworkPluginID, useProviderDescriptor } from '@masknet/plugin-infra/web3'
 import {
     ProviderType,
@@ -97,7 +97,7 @@ export function ConnectionProgress(props: ConnectionProgressProps) {
                 </Card>
             </Paper>
             <Card className={classes.tipContent} elevation={0}>
-                <WarningTriangleIcon />
+                <Icon type="triangleWarning" />
                 <Typography className={classes.tipContentText} variant="body2">
                     <Trans
                         i18nKey="plugin_wallet_connect_tip"

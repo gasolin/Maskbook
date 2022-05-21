@@ -32,7 +32,7 @@ import { useI18N } from '../../utils'
 import { WalletMessages, WalletRPC } from '../../plugins/Wallet/messages'
 import Services from '../../extension/service'
 import { WalletIcon } from '@masknet/shared'
-import { PluginWalletConnectIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 
 const useStyles = makeStyles()((theme) => ({
     action: {
@@ -203,7 +203,7 @@ export function EthereumChainBoundary(props: EthereumChainBoundaryProps) {
                 {!props.hiddenConnectButton ? (
                     <ActionButton
                         fullWidth
-                        startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                        startIcon={<Icon type="connect" size={18} />}
                         variant="contained"
                         size={props.ActionButtonPromiseProps?.size}
                         sx={{ marginTop: 1.5 }}

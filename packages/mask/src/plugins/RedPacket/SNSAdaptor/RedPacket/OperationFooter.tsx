@@ -1,4 +1,4 @@
-import { SharedIcon, PluginWalletConnectIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { WalletMessages } from '@masknet/plugin-wallet'
 import { useRemoteControlledDialog } from '@masknet/shared-base-ui'
 import { ChainId, TransactionState, TransactionStateType, useAccount, useChainIdValid } from '@masknet/web3-shared-evm'
@@ -91,7 +91,7 @@ export function OperationFooter({
             <EthereumChainBoundary chainId={chainId ?? ChainId.Mainnet} renderInTimeline>
                 <EthereumWalletConnectedBoundary
                     hideRiskWarningConfirmed
-                    startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                    startIcon={<Icon type="connect" size={18} />}
                     renderInTimeline
                     classes={{
                         button: classes.walletButton,
@@ -108,7 +108,7 @@ export function OperationFooter({
                                     padding: 1.125,
                                 }}
                                 fullWidth
-                                startIcon={<SharedIcon style={{ fontSize: 18 }} />}
+                                startIcon={<Icon type="shared" size={18} />}
                                 variant="contained"
                                 onClick={onShare}>
                                 {t('share')}

@@ -2,6 +2,8 @@ export type IconType =
     | 'blocto'
     | 'discord'
     | 'eth'
+    | 'evmChains'
+    | 'flow'
     | 'mask'
     | 'maskBanner'
     | 'maskBlue'
@@ -13,7 +15,9 @@ export type IconType =
     | 'metaMask'
     | 'miniMask'
     | 'polkaDot'
+    | 'solana'
     | 'walletConnect'
+    | 'accountBalanceWallet'
     | 'addUser'
     | 'airdrop'
     | 'arrowBack'
@@ -38,6 +42,7 @@ export type IconType =
     | 'collectible'
     | 'copy'
     | 'cram'
+    | 'cryptoArt'
     | 'dashboard'
     | 'delete'
     | 'direct'
@@ -56,6 +61,8 @@ export type IconType =
     | 'facebookRound'
     | 'file'
     | 'fileMessage'
+    | 'furucombo'
+    | 'gear'
     | 'gearSettings'
     | 'grayMasks'
     | 'importWallet'
@@ -85,10 +92,12 @@ export type IconType =
     | 'openSeaColoredIcon'
     | 'personas'
     | 'pin'
+    | 'plugin'
     | 'poll'
     | 'popupCopy'
     | 'popupLink'
     | 'popupRestore'
+    | 'provider'
     | 'publicKey'
     | 'redPacket'
     | 'refresh'
@@ -100,6 +109,7 @@ export type IconType =
     | 'rightArrow'
     | 'risk'
     | 'search'
+    | 'searchEmpty'
     | 'selected'
     | 'send'
     | 'setting'
@@ -129,6 +139,7 @@ export type IconType =
     | 'wallet'
     | 'walletNav'
     | 'warning'
+    | 'warningTriangle'
     | 'menuLabs'
     | 'menuLabsActive'
     | 'menuPersonas'
@@ -138,7 +149,9 @@ export type IconType =
     | 'menuWallets'
     | 'menuWalletsActive'
     | 'artblocks'
+    | 'artBlocks'
     | 'collectibles'
+    | 'connect'
     | 'crossBridge'
     | 'currency'
     | 'cyberConnect'
@@ -153,11 +166,13 @@ export type IconType =
     | 'marketsClaim'
     | 'marketTrend'
     | 'maskBox'
+    | 'nftAvatar'
     | 'petIcon'
     | 'poolTogether'
     | 'poolTogetherTrophy'
     | 'savings'
     | 'securityChecker'
+    | 'shared'
     | 'snapshot'
     | 'swapService'
     | 'tipCoin'
@@ -175,6 +190,8 @@ export type IconType =
 export const bloctoIcon = new URL('./brands/Blocto.svg', import.meta.url).href
 export const discordIcon = new URL('./brands/Discord.svg', import.meta.url).href
 export const ethIcon = new URL('./brands/ETH.svg', import.meta.url).href
+export const evmChainsIcon = new URL('./brands/EVMChains.svg', import.meta.url).href
+export const flowIcon = new URL('./brands/Flow.svg', import.meta.url).href
 export const maskIcon = new URL('./brands/Mask.svg', import.meta.url).href
 export const maskBannerIcon = new URL('./brands/MaskBanner.svg', import.meta.url).href
 export const maskBlueIcon = new URL('./brands/MaskBlue.svg', import.meta.url).href
@@ -194,7 +211,10 @@ export const miniMaskDimIcon = new URL('./brands/MiniMask.dim.svg', import.meta.
 export const miniMaskLightIcon = new URL('./brands/MiniMask.light.svg', import.meta.url).href
 export const miniMaskIcon = new URL('./brands/MiniMask.svg', import.meta.url).href
 export const polkaDotIcon = new URL('./brands/PolkaDot.svg', import.meta.url).href
+export const solanaIcon = new URL('./brands/Solana.svg', import.meta.url).href
 export const walletConnectIcon = new URL('./brands/WalletConnect.svg', import.meta.url).href
+export const accountBalanceWalletDarkIcon = new URL('./general/AccountBalanceWallet.dark.svg', import.meta.url).href
+export const accountBalanceWalletIcon = new URL('./general/AccountBalanceWallet.svg', import.meta.url).href
 export const addUserIcon = new URL('./general/AddUser.svg', import.meta.url).href
 export const airdropIcon = new URL('./general/Airdrop.svg', import.meta.url).href
 export const arrowBackIcon = new URL('./general/ArrowBack.svg', import.meta.url).href
@@ -230,28 +250,25 @@ export const cloudBackupIcon = new URL('./general/CloudBackup.svg', import.meta.
 export const cloudLinkIcon = new URL('./general/CloudLink.svg', import.meta.url).href
 export const collectibleIcon = new URL('./general/Collectible.svg', import.meta.url).href
 export const copyIcon = (
-    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
         <g>
             <path
-                d="M16.115 8h-6.23C9.12 8 8.5 8.62 8.5 9.385v6.23C8.5 16.38 9.12 17 9.885 17h6.23c.765 0 1.385-.62 1.385-1.385v-6.23C17.5 8.62 16.88 8 16.115 8z"
-                fill="none"
                 stroke="currentColor"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M7.736 12.538c-.898 0-1.68-.267-2.244-.793-.566-.53-.858-1.273-.858-2.117V4.882c0-.84.29-1.58.852-2.109.558-.525 1.335-.795 2.226-.8h.003l4.383-.001c.898 0 1.68.267 2.244.793.566.53.858 1.273.858 2.117v4.746c0 .84-.29 1.58-.852 2.109-.558.525-1.335.794-2.226.8h-.003l-4.383.001v-.533.533Zm0-1.066c-.689 0-1.19-.203-1.516-.507-.32-.3-.52-.745-.52-1.337V4.882c0-.588.198-1.032.516-1.332.322-.303.82-.506 1.5-.51h.002l4.38-.002c.689 0 1.19.203 1.515.507.321.3.52.745.52 1.337v4.746c0 .588-.197 1.032-.516 1.332-.321.302-.818.506-1.5.51l-4.381.002Z"
             />
             <path
-                d="M5.577 12h-.692A1.385 1.385 0 013.5 10.615v-6.23A1.385 1.385 0 014.885 3h6.23A1.385 1.385 0 0112.5 4.385v.692"
-                fill="none"
                 stroke="currentColor"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M5.41 14.615c-.898 0-1.68-.267-2.243-.793-.567-.53-.86-1.273-.86-2.117V6.959c0-1.084.484-1.986 1.37-2.489a.533.533 0 1 1 .526.928c-.514.292-.828.816-.828 1.561v4.746c0 .592.199 1.037.52 1.337.325.304.826.507 1.515.507l4.382-.002c.763-.005 1.295-.259 1.612-.628a.533.533 0 1 1 .81.695c-.563.654-1.418.994-2.418 1h-.003l-4.383.001v-.533.533Z"
             />
         </g>
     </svg>
 )
 export const cramIcon = new URL('./general/Cram.svg', import.meta.url).href
+export const cryptoArtIcon = new URL('./general/CryptoArt.svg', import.meta.url).href
 export const dashboardIcon = new URL('./general/Dashboard.svg', import.meta.url).href
 export const deleteIcon = new URL('./general/Delete.svg', import.meta.url).href
 export const directIcon = new URL('./general/Direct.svg', import.meta.url).href
@@ -292,6 +309,8 @@ export const facebookColoredIcon = new URL('./general/FacebookColored.svg', impo
 export const facebookRoundIcon = new URL('./general/FacebookRound.svg', import.meta.url).href
 export const fileIcon = new URL('./general/File.svg', import.meta.url).href
 export const fileMessageIcon = new URL('./general/FileMessage.svg', import.meta.url).href
+export const furucomboIcon = new URL('./general/Furucombo.svg', import.meta.url).href
+export const gearIcon = new URL('./general/Gear.svg', import.meta.url).href
 export const gearSettingsIcon = new URL('./general/GearSettings.svg', import.meta.url).href
 export const grayMasksIcon = new URL('./general/GrayMasks.svg', import.meta.url).href
 export const importWalletIcon = new URL('./general/ImportWallet.svg', import.meta.url).href
@@ -426,10 +445,12 @@ export const nftSelectedIcon = new URL('./general/NFTSelected.svg', import.meta.
 export const openSeaColoredIconIcon = new URL('./general/OpenSeaColoredIcon.svg', import.meta.url).href
 export const personasIcon = new URL('./general/Personas.svg', import.meta.url).href
 export const pinIcon = new URL('./general/Pin.svg', import.meta.url).href
+export const pluginIcon = new URL('./general/Plugin.svg', import.meta.url).href
 export const pollIcon = new URL('./general/Poll.svg', import.meta.url).href
 export const popupCopyIcon = new URL('./general/PopupCopy.svg', import.meta.url).href
 export const popupLinkIcon = new URL('./general/PopupLink.svg', import.meta.url).href
 export const popupRestoreIcon = new URL('./general/PopupRestore.svg', import.meta.url).href
+export const providerIcon = new URL('./general/Provider.svg', import.meta.url).href
 export const publicKeyDarkIcon = new URL('./general/PublicKey.dark.svg', import.meta.url).href
 export const publicKeyLightIcon = new URL('./general/PublicKey.light.svg', import.meta.url).href
 export const publicKeyIcon = new URL('./general/PublicKey.svg', import.meta.url).href
@@ -467,6 +488,7 @@ export const searchIcon = (
         </g>
     </svg>
 )
+export const searchEmptyIcon = new URL('./general/SearchEmpty.svg', import.meta.url).href
 export const selectedIcon = new URL('./general/Selected.svg', import.meta.url).href
 export const sendIcon = new URL('./general/Send.svg', import.meta.url).href
 export const settingIcon = new URL('./general/Setting.svg', import.meta.url).href
@@ -496,6 +518,7 @@ export const verifiedIcon = new URL('./general/Verified.svg', import.meta.url).h
 export const walletIcon = new URL('./general/Wallet.svg', import.meta.url).href
 export const walletNavIcon = new URL('./general/WalletNav.svg', import.meta.url).href
 export const warningIcon = new URL('./general/Warning.svg', import.meta.url).href
+export const warningTriangleIcon = new URL('./general/WarningTriangle.svg', import.meta.url).href
 export const menuLabsIcon = new URL('./menus/MenuLabs.svg', import.meta.url).href
 export const menuLabsActiveIcon = new URL('./menus/MenuLabsActive.svg', import.meta.url).href
 export const menuPersonasIcon = new URL('./menus/MenuPersonas.svg', import.meta.url).href
@@ -505,7 +528,9 @@ export const menuSettingsActiveIcon = new URL('./menus/MenuSettingsActive.svg', 
 export const menuWalletsIcon = new URL('./menus/MenuWallets.svg', import.meta.url).href
 export const menuWalletsActiveIcon = new URL('./menus/MenuWalletsActive.svg', import.meta.url).href
 export const artblocksIcon = new URL('./plugins/artblocks.png', import.meta.url).href
+export const artBlocksIcon = new URL('./plugins/ArtBlocks.svg', import.meta.url).href
 export const collectiblesIcon = new URL('./plugins/Collectibles.svg', import.meta.url).href
+export const connectIcon = new URL('./plugins/connect.svg', import.meta.url).href
 export const crossBridgeIcon = new URL('./plugins/CrossBridge.svg', import.meta.url).href
 export const currencyIcon = (
     <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -563,11 +588,13 @@ export const marketsIcon = new URL('./plugins/Markets.svg', import.meta.url).hre
 export const marketsClaimIcon = new URL('./plugins/MarketsClaim.svg', import.meta.url).href
 export const marketTrendIcon = new URL('./plugins/MarketTrend.svg', import.meta.url).href
 export const maskBoxIcon = new URL('./plugins/MaskBox.svg', import.meta.url).href
+export const nftAvatarIcon = new URL('./plugins/NFTAvatar.svg', import.meta.url).href
 export const petIconIcon = new URL('./plugins/PetIcon.svg', import.meta.url).href
 export const poolTogetherIcon = new URL('./plugins/PoolTogether.png', import.meta.url).href
 export const poolTogetherTrophyIcon = new URL('./plugins/PoolTogetherTrophy.svg', import.meta.url).href
 export const savingsIcon = new URL('./plugins/Savings.svg', import.meta.url).href
 export const securityCheckerIcon = new URL('./plugins/SecurityChecker.svg', import.meta.url).href
+export const sharedIcon = new URL('./plugins/shared.svg', import.meta.url).href
 export const snapshotIcon = new URL('./plugins/Snapshot.svg', import.meta.url).href
 export const swapServiceIcon = new URL('./plugins/SwapService.svg', import.meta.url).href
 export const tipCoinIcon = (
@@ -633,6 +660,8 @@ const icons = {
     blocto: bloctoIcon,
     discord: discordIcon,
     eth: ethIcon,
+    evmChains: evmChainsIcon,
+    flow: flowIcon,
     mask: maskIcon,
     maskBanner: maskBannerIcon,
     maskBlue: maskBlueIcon,
@@ -649,7 +678,10 @@ const icons = {
     'miniMask.dim': miniMaskDimIcon,
     miniMask: miniMaskIcon,
     polkaDot: polkaDotIcon,
+    solana: solanaIcon,
     walletConnect: walletConnectIcon,
+    'accountBalanceWallet.dark': accountBalanceWalletDarkIcon,
+    accountBalanceWallet: accountBalanceWalletIcon,
     addUser: addUserIcon,
     airdrop: airdropIcon,
     arrowBack: arrowBackIcon,
@@ -674,6 +706,7 @@ const icons = {
     collectible: collectibleIcon,
     copy: copyIcon,
     cram: cramIcon,
+    cryptoArt: cryptoArtIcon,
     dashboard: dashboardIcon,
     delete: deleteIcon,
     direct: directIcon,
@@ -694,6 +727,8 @@ const icons = {
     facebookRound: facebookRoundIcon,
     file: fileIcon,
     fileMessage: fileMessageIcon,
+    furucombo: furucomboIcon,
+    gear: gearIcon,
     gearSettings: gearSettingsIcon,
     grayMasks: grayMasksIcon,
     importWallet: importWalletIcon,
@@ -725,10 +760,12 @@ const icons = {
     openSeaColoredIcon: openSeaColoredIconIcon,
     personas: personasIcon,
     pin: pinIcon,
+    plugin: pluginIcon,
     poll: pollIcon,
     popupCopy: popupCopyIcon,
     popupLink: popupLinkIcon,
     popupRestore: popupRestoreIcon,
+    provider: providerIcon,
     'publicKey.dark': publicKeyDarkIcon,
     publicKey: publicKeyIcon,
     redPacket: redPacketIcon,
@@ -742,6 +779,7 @@ const icons = {
     rightArrow: rightArrowIcon,
     risk: riskIcon,
     search: searchIcon,
+    searchEmpty: searchEmptyIcon,
     selected: selectedIcon,
     send: sendIcon,
     setting: settingIcon,
@@ -771,6 +809,7 @@ const icons = {
     wallet: walletIcon,
     walletNav: walletNavIcon,
     warning: warningIcon,
+    warningTriangle: warningTriangleIcon,
     menuLabs: menuLabsIcon,
     menuLabsActive: menuLabsActiveIcon,
     menuPersonas: menuPersonasIcon,
@@ -780,7 +819,9 @@ const icons = {
     menuWallets: menuWalletsIcon,
     menuWalletsActive: menuWalletsActiveIcon,
     artblocks: artblocksIcon,
+    artBlocks: artBlocksIcon,
     collectibles: collectiblesIcon,
+    connect: connectIcon,
     crossBridge: crossBridgeIcon,
     currency: currencyIcon,
     'cyberConnect.dark': cyberConnectDarkIcon,
@@ -797,11 +838,13 @@ const icons = {
     marketsClaim: marketsClaimIcon,
     marketTrend: marketTrendIcon,
     maskBox: maskBoxIcon,
+    nftAvatar: nftAvatarIcon,
     petIcon: petIconIcon,
     poolTogether: poolTogetherIcon,
     poolTogetherTrophy: poolTogetherTrophyIcon,
     savings: savingsIcon,
     securityChecker: securityCheckerIcon,
+    shared: sharedIcon,
     snapshot: snapshotIcon,
     swapService: swapServiceIcon,
     tipCoin: tipCoinIcon,

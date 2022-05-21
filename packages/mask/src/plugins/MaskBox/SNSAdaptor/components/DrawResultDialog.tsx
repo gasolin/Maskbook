@@ -10,7 +10,7 @@ import ActionButton from '../../../../extension/options-page/DashboardComponents
 import { activatedSocialNetworkUI } from '../../../../social-network'
 import { usePostLink } from '../../../../components/DataSource/usePostInfo'
 import { Context } from '../../hooks/useContext'
-import { SharedIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 
 const useStyles = makeStyles()((theme) => ({
     main: { padding: 8 },
@@ -62,7 +62,7 @@ export function DrawResultDialog(props: DrawResultDialogProps) {
                         ))}
                     </Box>
                     <ActionButton
-                        startIcon={<SharedIcon style={{ width: 18, height: 18 }} />}
+                        startIcon={<Icon type="shared" size={18} />}
                         size="medium"
                         fullWidth
                         variant="contained"

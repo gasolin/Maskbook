@@ -23,7 +23,7 @@ import { isTwitter } from '../../../social-network-adaptor/twitter.com/base'
 import { isFacebook } from '../../../social-network-adaptor/facebook.com/base'
 import { NFTCardStyledAssetPlayer } from '@masknet/shared'
 import { openWindow } from '@masknet/shared-base-ui'
-import { PluginWalletConnectIcon, SharedIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { EthereumChainBoundary } from '../../../web3/UI/EthereumChainBoundary'
 
 const useStyles = makeStyles()((theme) => ({
@@ -434,7 +434,7 @@ export function RedPacketNft({ payload }: RedPacketNftProps) {
                 <Box className={classes.buttonWrapper}>
                     <Box sx={{ flex: 1, padding: 1.5 }}>
                         <Button
-                            startIcon={<SharedIcon style={{ fontSize: 18 }} />}
+                            startIcon={<Icon type="shared" size={18} />}
                             className={classes.button}
                             fullWidth
                             onClick={onShare}
@@ -447,7 +447,7 @@ export function RedPacketNft({ payload }: RedPacketNftProps) {
                             <EthereumChainBoundary chainId={payload.chainId} renderInTimeline>
                                 <EthereumWalletConnectedBoundary
                                     renderInTimeline
-                                    startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                                    startIcon={<Icon type="connect" size={18} />}
                                     classes={{
                                         connectWallet: classes.button,
                                         unlockMetaMask: classes.button,
