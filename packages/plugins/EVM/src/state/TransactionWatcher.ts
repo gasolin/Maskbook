@@ -6,7 +6,7 @@ import { TransactionCheckers } from './TransactionWatcher/checker'
 export class TransactionWatcher extends TransactionWatcherState<ChainId, Transaction> {
     constructor(context: Plugin.Shared.SharedContext) {
         super(context, TransactionCheckers, {
-            defaultBlockDelay: 15,
+            defaultBlockDelay: 1,
         })
     }
 }

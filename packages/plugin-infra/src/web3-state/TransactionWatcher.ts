@@ -96,7 +96,9 @@ class Watcher<ChainId, Transaction> {
     private startCheck(chainId: ChainId) {
         this.stopCheck()
         if (this.timer === null) {
-            this.timer = setTimeout(this.check.bind(this, chainId), this.options.delay)
+            this.timer = setTimeout(() => {
+                this.check(chainId)
+            }, this.options.delay)
         }
     }
 
@@ -153,6 +155,7 @@ export class TransactionWatcherState<ChainId, Transaction>
 
     watchTransaction(chainId: ChainId, id: string, transaction: Transaction) {
         this.getWatcher(chainId).watchTransaction(chainId, id, transaction)
+        this.emitter.emit('progress', id, TransactionStatusType.NOT_DEPEND)
     }
 
     unwatchTransaction(chainId: ChainId, id: string) {

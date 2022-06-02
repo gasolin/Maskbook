@@ -50,16 +50,16 @@ export class RecentTransaction implements Middleware<Context> {
                     TransactionWatcher?.watchTransaction(context.chainId, context.result, context.config)
                     break
                 case EthereumMethodType.ETH_GET_TRANSACTION_RECEIPT:
-                    const receipt = context.result as TransactionReceipt | null
-                    const status = getReceiptStatus(receipt)
-                    if (receipt?.transactionHash && status !== TransactionStatusType.NOT_DEPEND) {
-                        await Transaction?.updateTransaction?.(
-                            context.chainId,
-                            context.account,
-                            receipt.transactionHash,
-                            status,
-                        )
-                    }
+                    // const receipt = context.result as TransactionReceipt | null
+                    // const status = getReceiptStatus(receipt)
+                    // if (receipt?.transactionHash && status !== TransactionStatusType.NOT_DEPEND) {
+                    //     await Transaction?.updateTransaction?.(
+                    //         context.chainId,
+                    //         context.account,
+                    //         receipt.transactionHash,
+                    //         status,
+                    //     )
+                    // }
                     break
             }
         } catch {
