@@ -203,7 +203,6 @@ const ContractInteraction = memo(() => {
                             contractAddress: request.computedPayload?.to,
                         }
                     default:
-                        console.log('done1')
                         return {
                             isNativeTokenInteraction: true,
                             typeName: t('popups_wallet_contract_interaction'),
