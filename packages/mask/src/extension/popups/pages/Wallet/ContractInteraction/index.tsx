@@ -203,6 +203,7 @@ const ContractInteraction = memo(() => {
                             contractAddress: request.computedPayload?.to,
                         }
                     default:
+                        console.log('done1')
                         return {
                             isNativeTokenInteraction: true,
                             typeName: t('popups_wallet_contract_interaction'),
@@ -291,7 +292,7 @@ const ContractInteraction = memo(() => {
 
     // token decimals
     const tokenAmount = (amount ?? 0) as number
-    const tokenDecimals = token?.decimals
+    const tokenDecimals = isNativeTokenInteraction ? nativeToken?.decimals : token?.decimals
 
     // token estimated value
     const { value: tokenPrice } = useFungibleTokenPrice(NetworkPluginID.PLUGIN_EVM, token?.address, {
