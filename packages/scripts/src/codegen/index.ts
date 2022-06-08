@@ -19,3 +19,4 @@ watchTask(codegen, codegenWatch, 'codegen', 'All codegen tasks combined into one
 export * from './i18n-codegen'
 export * from './typescript'
 export * from './resource-files'
+export * from './plugin-precompile'

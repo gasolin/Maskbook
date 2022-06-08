@@ -7,6 +7,7 @@ export {
     typescriptWatch,
     resourceCopy,
     resourceCopyWatch,
+    pluginPrecompile,
 } from './codegen'
 export { ciBuild, extensionWatch } from './extension'
 export { buildNetlify } from './netlify'

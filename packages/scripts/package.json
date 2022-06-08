@@ -7,6 +7,7 @@
     "dev": "./src/bin/dev.ts"
   },
   "dependencies": {
+    "@masknet/static-module-record-swc": "^0.2.0",
     "@types/rimraf": "^3.0.2",
     "chalk": "^4.1.2",
     "enquirer": "^2.3.6",
