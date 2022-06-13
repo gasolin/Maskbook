@@ -1179,6 +1179,7 @@ importers:
       proper-lockfile: ^4.1.1
       rimraf: ^3.0.2
       ts-node: ^10.7.0
+      ws: ^8.8.0
       yargs: ^17.5.1
     dependencies:
       '@masknet/static-module-record-swc': 0.2.0
@@ -1189,6 +1190,7 @@ importers:
       gulp-zip: 5.1.0
       proper-lockfile: 4.1.2
       rimraf: 3.0.2
+      ws: 8.8.0
       yargs: 17.5.1
     devDependencies:
       '@types/fs-extra': 9.0.13
@@ -25191,7 +25193,7 @@ packages:
     dev: true
 
   /resumer/0.0.0:
-    resolution: {integrity: sha512-Fn9X8rX8yYF4m81rZCK/5VmrmsSbqS/i3rDLl6ZZHAXgC2nTAx3dhwG8q8odP/RmdLa2YrybDJaAMg+X1ajY3w==}
+    resolution: {integrity: sha1-8ej0YeQGS6Oegq883CqMiT0HZ1k=}
     dependencies:
       through: 2.3.8
     dev: false
@@ -25572,7 +25574,7 @@ packages:
     dev: true
 
   /semver-regex/1.0.0:
-    resolution: {integrity: sha512-1vZcoRC+LPtHFkLUPyrabsATDSHerxW+hJBN8h04HZOZBuewbXaNROtUVdEPrTdZsWNq6sfsXDhd48GB2xTG4g==}
+    resolution: {integrity: sha1-kqSWkGX5xwxpR1PVUkj8aPj2Usk=}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -29631,6 +29633,19 @@ packages:
 
   /ws/8.6.0:
     resolution: {integrity: sha512-AzmM3aH3gk0aX7/rZLYvjdvZooofDu3fFOzGqcSnQ1tOcTWwhM/o+q++E8mAyVVIyUdajrkzWUGftaVSDLn1bw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
+
+  /ws/8.8.0:
+    resolution: {integrity: sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
